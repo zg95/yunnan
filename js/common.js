@@ -1,7 +1,6 @@
 /*APP 1.0*/
 var App = function() {
     var app =function () {
-
         $(".yun-box .list-li").on("click","li",function (event) {
             let target = $(event.target);
             let popup = $(".popup");
@@ -130,6 +129,14 @@ var App = function() {
         })
     };
 
+    var app2 =function () {
+        $(".li-jinag .list-li").on('click','li',function (event) {
+            let target = $(event.target);
+            let popup = $(".popup");
+            popup.show(600)
+        })
+    }
+    
     var canvas = function () {
         var canvas = document.createElement('canvas')
         document.getElementsByTagName('body')[0].appendChild(canvas)
@@ -291,6 +298,7 @@ var App = function() {
     return{
         init:function () {
             app();
+            app2();
             canvas();
         }
     }

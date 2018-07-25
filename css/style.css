@@ -354,7 +354,7 @@ canvas{
   top:0;
   z-index: -1;
 }
-.yun-box{
+.yun-box,.li-jinag{
   width: 96%;
   margin: auto;
   padding: 40px 20px 80px;
@@ -362,7 +362,7 @@ canvas{
   box-shadow: 0 6px 20px #3c3950;
   transform: translate3d(0,-5px,0);
 }
-.yun-box.color-white{
+.yun-box.color-white,.li-jinag.color-white{
   background-color: #fff;
 }
 .list{
