@@ -37,7 +37,7 @@ var App = function() {
                 '</div>'+
                 '</div>'
 
-                $(".modal-popup").after(html);
+                setTimeout(function(){$(".modal-popup").after(html)},500);
 
                 setTimeout(function(){
                     /*轮播*/
@@ -95,7 +95,7 @@ var App = function() {
                 '</ul>'+
                 '</div>'+
                 '</div>'
-                $(".modal-popup").after(html);
+                setTimeout(function(){$(".modal-popup").after(html)},500);
 
             }else if(target.hasClass("list-li-3")){
                 /*美食*/
@@ -119,7 +119,7 @@ var App = function() {
                     '</ul>'+
                     '</div>'+
                     '</div>';
-                $(".modal-popup").after(html);
+                setTimeout(function(){$(".modal-popup").after(html)},500);
 
             }
             popup.show(600)
