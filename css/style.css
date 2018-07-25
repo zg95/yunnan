@@ -362,6 +362,9 @@ canvas{
   box-shadow: 0 6px 20px #3c3950;
   transform: translate3d(0,-5px,0);
 }
+.yun-box.color-white{
+  background-color: #fff;
+}
 .list{
   font-size: 27px;
   text-align: left;
