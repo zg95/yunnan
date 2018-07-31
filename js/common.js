@@ -133,6 +133,96 @@ var App = function() {
         $(".li-jinag .list-li").on('click','li',function (event) {
             let target = $(event.target);
             let popup = $(".popup");
+            if(target.hasClass("list-li-1")){
+                let html ;
+                // $(".popup-min").remove();
+                html = 	'<div class="popup-min">'+
+                    '<h2>酒店 <em>-丽江天空之城观雪山客栈</em></h2>'+
+                    '<div class="map">'+
+                    '<p class="popup-title">1.路线:</p>'+
+                    '<ul>'+
+                    '<li>我们从大理到丽江所以只考虑火车站路线: <br/> 丽江站-- 乘坐4路火车站专线 -- 公路总段站下车 -- 到达老北京布鞋丁字路口右转进入小道 -- 沿着小道直行到达丽江花神客栈 -- 右转 -- 到达三只小熊观景客栈<br/></li>'+
+                    '</ul>'+
+                    '<p class="popup-title">2.酒店地址:</p>'+
+                    '<div id="container1" class="container"></div>'+
+                    '<p class="popup-title">3.酒店图片:</p>'+
+                    '<div class="swiper-container">'+
+                    '<div class="swiper-wrapper">'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_1.jpg" alt=""></div>'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_2.jpg" alt=""></div>'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_3.jpg" alt=""></div>'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_4.jpg" alt=""></div>'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_5_1.jpg" alt=""></div>'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_5_2.jpg" alt=""></div>'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_5_3.jpg" alt=""></div>'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_5_4.jpg" alt=""></div>'+
+                    '<div class="swiper-slide"><img src="img/lij/lij_hotel_5_5.jpg" alt=""></div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'
+
+                setTimeout(function(){$(".modal-popup").after(html)},500);
+
+                setTimeout(function(){
+                    /*轮播*/
+                    var swiper = new Swiper('.swiper-container', {});
+                    /*轮播end*/
+                    /*地图*/
+                    new BaiduMap({
+                        id: "container1",
+                        title: {
+                            text: "丽江天空之城观雪山客栈",
+                            className: "title"
+                        },
+                        content: {
+                            className: "content",
+                            text: ["地址：丽江新华街黄山上段45-1号", "电话：18388808007"]
+                        },
+                        point: {
+                            lng: 100.23736,
+                            lat: 26.877446
+                        },
+                        level: 15,
+                        zoom: true,
+                        type: ["地图", "卫星", "三维"],
+                        width: 320,
+                        height: 70
+                    });
+                    /*地图end*/
+                }, 650);
+
+            }else if(target.hasClass("list-li-2")){
+                let html;
+                html =	'<div class="popup-min">'+
+                    '<h2>行程</h2>'+
+                    '<div class="map">'+
+                    '<p class="popup-title">第一天 -- 大理古城</p>'+
+                    '<ul>'+
+                    '<li>a.路线 <br/> 从酒店出发 -- 云龙路口 -- 云龙路口站乘坐通勤2号线 -- 到世纪中学站换乘8路 -- 风花雪月酒店下车(到达大理古城) <span class="text-note">(一个小时路程)</span></li>'+
+                    '<li>b.古城攻略 <br/> 洱海门进入 -- 面前就是网红人民路 人民路上有一家飘香酒馆和段公子还可以 在古城 逛的时候遇到这几个店可以进去看看 尝尝：JoJo‘s BBQ , 熊猫家酸奶,再回首凉鸡米线<br> 而在复兴路上有文献楼、南城门楼、五华楼，北城门 还有被誉为云南最美书店的“海豚阿德书店”<br> 洋人街和红龙井工艺品较多 </li>'+
+                    '</ul>'+
+                    '<p class="popup-title">第二天 -- 沧海</p>'+
+                    '<p>选择有两种:</p>'+
+                    '<ul>'+
+                    '<li>1.酒店包车直接去双廊</li>'+
+                    '<li>2.环洱海骑行 或者 租小电驴环海  <span class="text-note">(小电驴的话要注意电量 充电十分麻烦)</span></li>'+
+                    '<li>方案二比较轻松自由</li>'+
+                    '</ul>'+
+                    '<p class="popup-title">第三天 -- 苍山</p>'+
+                    '<ul>'+
+                    '<li>a.路线 <br> 从酒店出发 -- 逸龙滨海酒店站乘坐通勤1号线 -- 到小车加油站下车过马路 -- 到小车加油站换乘三塔专 -- 水碓村站下车 -- 过马路直行 -- 到达苍山 <span class="text-note">(需要一个小时左右的路程)</span></li>'+
+                    '<li>b.苍山攻略 <br> 上苍山有两个途径：乘坐索道、步行走登山步道。索道互不相通，分别可达山腰玉带路上的清碧溪、中和寺和洗马潭。<span class="text-note">(时间原因:建议坐索道)</span> 苍山的山腰间修有一条长18公里的游山步道，称为玉带云游路，可俯瞰大理坝子和洱海风光。<span class="text-note">游览时千万不要偏离玉带云游路</span> </li>'+
+                    '</ul>'+
+                    '</div>'+
+                    '</div>'
+                setTimeout(function(){$(".modal-popup").after(html)},500);
+
+            }else if(target.hasClass("list-li-3")){
+                let html;
+
+            }
+
             popup.show(600)
         })
     }
